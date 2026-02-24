@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+body {
+  font-family: "Vazirmatn", sans-serif;
+}
+
+@theme {
+  --color-primary: #0245a3;
+  --color-secondary: #355872;
+}
