@@ -28,7 +28,7 @@ export default function SignUp() {
   return (
     <>
       <div className="flex w-full">
-        <div className="bg-[#9CD5FF] w-2/5 shadow-md shadow-gray-500 flex flex-row px-16">
+        <div className="bg-[#9CD5FF] w-full h-screen shadow-md shadow-gray-500 flex flex-row px-16 md:w-2/5">
           <div className="my-auto space-y-8 px-16">
             <Link href={"/"}>
               <div className="px-24">
@@ -125,7 +125,7 @@ export default function SignUp() {
           </div>
         </div>
         <div>
-          <img src={authPage.src} className="h-screen" />
+          <img src={authPage.src} className="h-screen hidden md:block" />
         </div>
       </div>
     </>
