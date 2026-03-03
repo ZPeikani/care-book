@@ -28,7 +28,7 @@ export default function SignUp() {
   return (
     <>
       <div className="flex w-full">
-        <div className="bg-[#9CD5FF] w-full h-screen shadow-md shadow-gray-500 flex flex-row px-16 md:w-2/5">
+        <div className="bg-thirdly w-full h-screen shadow-md shadow-gray-500 flex flex-row px-16 md:w-2/5">
           <div className="my-auto space-y-8 px-16">
             <Link href={"/"}>
               <div className="px-24">
