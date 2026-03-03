@@ -46,7 +46,7 @@ export default function SignUp() {
               </h1>
             </div>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-2.5">
-              <div className="space-y-2">
+              <div>
                 <label
                   className="block font-semibold mb-2 text-secondary"
                   htmlFor="username"
@@ -60,17 +60,19 @@ export default function SignUp() {
                     })}
                     id="username"
                     type="text"
-                    className="shadow bg-white appearance-none rounded-sm w-full py-2 px-7 text-gray-700 leading-tight focus:outline-primary focus:shadow-outline focus:shadow-[#7AAACE] focus:shadow-lg"
+                    className={`shadow bg-white appearance-none rounded-sm w-full py-2 px-7 text-gray-700 leading-tight focus:shadow-outline focus:shadow-lg ${errors.username ? "focus:outline-red-500 focus:shadow-red-200" : "focus:outline-primary focus:shadow-[#7AAACE]"}`}
                   />
                   <div className="absolute inset-y-0 flex items-center pointer-events-none  peer-disabled:opacity-50 peer-disabled:pointer-events-none">
-                    <FaUser className="text-gray-400 mr-2" />
+                    <FaUser
+                      className={`${errors.username ? "text-red-500" : "text-gray-400"} mr-2`}
+                    />
                   </div>
                 </div>
                 <span className="text-red-500 text-xs">
                   {errors.username ? String(errors.username.message) : ""}
                 </span>
               </div>
-              <div className="space-y-2">
+              <div>
                 <label
                   className="block font-semibold mb-2 text-secondary"
                   htmlFor="username"
@@ -92,10 +94,12 @@ export default function SignUp() {
                     })}
                     id="password"
                     type={showPassword ? "text" : "password"}
-                    className="shadow bg-white appearance-none rounded-sm w-full py-2 px-7 text-gray-700 leading-tight focus:outline-primary focus:shadow-outline focus:shadow-[#7AAACE] focus:shadow-lg"
+                    className={`shadow bg-white appearance-none rounded-sm w-full py-2 px-7 text-gray-700 leading-tight focus:shadow-outline focus:shadow-lg ${errors.password ? "focus:outline-red-500 focus:shadow-red-200" : "focus:outline-primary focus:shadow-[#7AAACE]"}`}
                   />
                   <div className="absolute inset-y-0 flex items-center pointer-events-none  peer-disabled:opacity-50 peer-disabled:pointer-events-none">
-                    <FaLock className="text-gray-400 mr-2" />
+                    <FaLock
+                      className={`${errors.password ? "text-red-500" : "text-gray-400"} mr-2`}
+                    />
                   </div>
                   <button
                     type="button"
@@ -103,9 +107,13 @@ export default function SignUp() {
                     className="focus:outline-none absolute inset-y-0 start-0 flex items-center peer-disabled:opacity-50 peer-disabled:pointer-events-none cursor-pointer"
                   >
                     {showPassword ? (
-                      <FaEye className="text-gray-500 ml-2" />
+                      <FaEye
+                        className={`${errors.password ? "text-red-500" : "text-gray-400"} ml-2`}
+                      />
                     ) : (
-                      <FaEyeSlash className="text-gray-500 ml-2" />
+                      <FaEyeSlash
+                        className={`${errors.password ? "text-red-500" : "text-gray-400"} ml-2`}
+                      />
                     )}
                   </button>
                 </div>
@@ -113,7 +121,7 @@ export default function SignUp() {
                   {errors.password ? String(errors.password.message) : ""}
                 </span>
               </div>
-              <div className="space-y-2">
+              <div>
                 <label
                   className="block font-semibold mb-2 text-secondary"
                   htmlFor="username"
@@ -131,7 +139,7 @@ export default function SignUp() {
                     })}
                     id="email"
                     type="email"
-                    className="shadow bg-white appearance-none rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-primary focus:shadow-outline focus:shadow-[#7AAACE] focus:shadow-lg"
+                    className={`shadow bg-white appearance-none rounded-sm w-full py-2 px-7 text-gray-700 leading-tight focus:shadow-outline focus:shadow-lg ${errors.email ? "focus:outline-red-500 focus:shadow-red-200" : "focus:outline-primary focus:shadow-[#7AAACE]"}`}
                     placeholder="you@example.com"
                   />
                 </div>
