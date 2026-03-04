@@ -7,4 +7,9 @@ export const texts = {
   password: "رمز عبور",
   email: "ایمیل",
   register: "تایید",
+  home: "خانه",
+  doctors: "پزشکان",
+  blog: "مجله",
+  aboutUs: "درباره ما",
+  contactUs: "ارتباط با ما",
 };
