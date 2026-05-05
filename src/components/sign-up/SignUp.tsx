@@ -147,7 +147,11 @@ export default function SignUp() {
                   {errors.email ? String(errors.email.message) : ""}
                 </span>
               </div>
-              <Buttons buttonText={texts.register} width="w-full" />
+              <Buttons
+                buttonText={texts.register}
+                buttonType="submit"
+                classNames="w-full"
+              />
             </form>
             <div className="w-full text-center">
               <span>قبلا ثبت نام کرده اید؟</span>

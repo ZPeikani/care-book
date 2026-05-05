@@ -120,7 +120,11 @@ export default function SignUp() {
                   {errors.password ? String(errors.password.message) : ""}
                 </span>
               </div>
-              <Buttons buttonText={texts.register} width="w-full" />
+              <Buttons
+                buttonText={texts.register}
+                buttonType="submit"
+                classNames="w-full"
+              />
             </form>
             <div className="w-full text-center">
               <Link
