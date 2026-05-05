@@ -1,3 +1,26 @@
+import banner from "@/assets/poster/NTGXNG.jpg";
+import SearchBar from "./search-bar/SearchBar";
+import Specialties from "./specialties/Specialties";
+import TopDoctors from "./top-doctors/TopDoctors";
+import bannerContactUs from "@/assets/poster/more-info.png";
+import bannerDoctorRegister from "@/assets/poster/doctor-register.png";
+import CareBlogs from "./blogs/CareBlogs";
 export default function Home() {
-  return <h1>Home</h1>;
+  return (
+    <div className="mb-10 flex flex-col gap-16">
+      <div>
+        <img src={banner.src} alt="banner" />
+        <SearchBar display="hidden md:block" />
+      </div>
+      <Specialties />
+      <img src={bannerContactUs.src} alt="bannerContactUs"/>
+      <TopDoctors />
+      <CareBlogs />
+      <img
+        src={bannerDoctorRegister.src}
+        alt="bannerDoctorRegister"
+        className="w-fit m-auto"
+      />
+    </div>
+  );
 }
