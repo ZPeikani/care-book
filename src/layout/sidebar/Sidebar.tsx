@@ -9,11 +9,12 @@ import {
   HiOutlineUsers,
 } from "react-icons/hi";
 import { HiOutlineCalendarDays } from "react-icons/hi2";
+import { ReactNode } from "react";
 
-export function Sidebar() {
+export function Sidebar({children}: { children: ReactNode }) {
   const router = useRouter();
   return (
-    <div className="flex gap-16">
+    <div className="flex">
       <div className="h-screen w-full max-w-60 p-4 shadow-xl shadow-blue-gray-900/5 ">
         <div className="mb-4 flex flex-col">
           <Link href="/" className="pb-4 px-4">
@@ -21,7 +22,7 @@ export function Sidebar() {
           </Link>
         </div>
         <ul className="flex flex-col gap-4 text-gray-700 font-bold">
-          <Link href={"/dashboard/products-panel"}>
+          <Link href={"/dashboard"}>
             <li
               className={`flex gap-2 items-center py-2 px-1  hover:cursor-pointer ${
                 router.pathname === "/dashboard"
@@ -83,7 +84,7 @@ export function Sidebar() {
           </Link>
         </ul>
       </div>
-      {/* <div className="my-12">{children}</div> */}
+      <div className="bg-thirdly h-screen w-full py-20 px-10">{children}</div>
     </div>
   );
 }
