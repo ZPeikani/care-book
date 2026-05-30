@@ -2,7 +2,7 @@ type buttonsProps = {
   buttonText: string;
   classNames?: string;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
-  buttonType?: "button" | "submit" | "reset";
+  buttonType: "button" | "submit" | "reset";
 };
 export default function Buttons({
   buttonText,
