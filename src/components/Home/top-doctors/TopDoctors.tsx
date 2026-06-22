@@ -2,8 +2,18 @@ import { texts } from "@/constants/localization";
 import SectionTitle from "../section-title/SectionTitle";
 import Link from "next/link";
 import CardDoctor from "@/components/card/card-doctor/CardDoctor";
+import { StaticImageData } from "next/image";
 
-export default function TopDoctors() {
+type Props = {
+  doctors: {
+    id: number;
+    name: string;
+    specialty: string;
+    image: StaticImageData;
+  }[];
+};
+
+export default function TopDoctors({doctors}:Props) {
   return (
     <div className="flex flex-col gap-8">
       <SectionTitle title={texts.topDoctors} fontSize="text-2xl" />
@@ -14,12 +24,9 @@ export default function TopDoctors() {
           </Link>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-6 gap-2">
-          <CardDoctor />
-          <CardDoctor />
-          <CardDoctor />
-          <CardDoctor />
-          <CardDoctor />
-          <CardDoctor />
+          {doctors.map(doctor => (
+            <CardDoctor key={doctor.id} doctor={doctor} />
+          ))}
         </div>
       </div>
     </div>
