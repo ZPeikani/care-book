@@ -1,10 +1,23 @@
+import CardDoctor from "@/components/card/card-doctor/CardDoctor";
+import { StaticImageData } from "next/image";
 import { useState } from "react";
 
-type SearchBarClass = {
-  display: string;
+type Doctor = {
+  id: number;
+  name: string;
+  specialty: string;
+  image: StaticImageData;
 };
-export default function SearchBar({ display }: SearchBarClass) {
+
+type Props = {
+  display: string;
+  doctors: Doctor[];
+};
+
+export default function SearchBar({ display, doctors }: Props) {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
+  const [search, setSearch] = useState("");
+
   const handleInputFocus = () => {
     setDropdownVisible(true);
   };
@@ -14,6 +27,20 @@ export default function SearchBar({ display }: SearchBarClass) {
       setDropdownVisible(false);
     }
   };
+  const normalize = (text: string) =>
+    text
+      .replace(/ي/g, "ی")
+      .replace(/ك/g, "ک")
+      .replace(/\u200c/g, " ")
+      .trim();
+  const filteredDoctors = doctors.filter(doctor => {
+    const query = normalize(search);
+
+    return (
+      normalize(doctor.name).includes(query) ||
+      normalize(doctor.specialty).includes(query)
+    );
+  });
   return (
     <div className={`relative ${display} flex mx-auto w-1/2`}>
       <div
@@ -42,10 +69,22 @@ export default function SearchBar({ display }: SearchBarClass) {
           className="w-full outline-none text-gray-900 pr-2"
           type="search"
           placeholder="جستجوی نام پزشک یا تخصص"
+          value={search}
+          onChange={e => {
+            setSearch(e.target.value);
+          }}
         />
       </div>
-      {isDropdownVisible && (
-        <div className="absolute shadow-lg p-4 rounded-md z-50 w-full bg-white"></div>
+      {search && isDropdownVisible && (
+        <div className="absolute top-full mt-2 shadow-lg p-4 rounded-md z-50 w-full bg-white">
+          {filteredDoctors.length > 0 ? (
+            filteredDoctors.map(doctor => (
+              <CardDoctor key={doctor.id} doctor={doctor} />
+            ))
+          ) : (
+            <p>موردی یافت نشد.</p>
+          )}
+        </div>
       )}
     </div>
   );
