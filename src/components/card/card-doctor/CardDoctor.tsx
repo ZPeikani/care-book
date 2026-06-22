@@ -1,20 +1,17 @@
-import drRamezani from "@/assets/doctors/dr-ramezani.jpg";
 import Buttons from "@/components/shared/buttons/Buttons";
 import { StaticImageData } from "next/image";
+
 type Doctor = {
   id: number;
   name: string;
   specialty: string;
   image: StaticImageData;
 };
+type Props = {
+  doctor: Doctor;
+};
 
-export default function CardDoctor() {
-  const doctor: Doctor = {
-    id: 1,
-    name: "دکتر مجید رمضانی",
-    specialty: "متخصص غدد",
-    image: drRamezani,
-  };
+export default function CardDoctor({ doctor }: Props) {
   return (
     <div>
       <div className="relative max-w-3xs w-full py-4 border border-gray-300 rounded-xl shadow-md">
