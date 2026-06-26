@@ -4,7 +4,7 @@ import Link from "next/link";
 import CardDoctor from "@/components/card/card-doctor/CardDoctor";
 import { StaticImageData } from "next/image";
 
-type Props = {
+export type Props = {
   doctors: {
     id: number;
     name: string;
