@@ -1,4 +1,4 @@
-import CardDoctor from "@/components/card/card-doctor/CardDoctor";
+import CardSearchbar from "@/components/card/card-searchbar/CardSearchbar";
 import { StaticImageData } from "next/image";
 import { useState } from "react";
 
@@ -79,7 +79,7 @@ export default function SearchBar({ display, doctors }: Props) {
         <div className="absolute top-full mt-2 shadow-lg p-4 rounded-md z-50 w-full bg-white">
           {filteredDoctors.length > 0 ? (
             filteredDoctors.map(doctor => (
-              <CardDoctor key={doctor.id} doctor={doctor} />
+              <CardSearchbar key={doctor.id} doctor={doctor} />
             ))
           ) : (
             <p>موردی یافت نشد.</p>
