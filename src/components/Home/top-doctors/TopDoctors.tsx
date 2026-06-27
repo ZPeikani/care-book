@@ -13,7 +13,7 @@ export type Props = {
   }[];
 };
 
-export default function TopDoctors({doctors}:Props) {
+export default function TopDoctors({ doctors }: Props) {
   return (
     <div className="flex flex-col gap-8">
       <SectionTitle title={texts.topDoctors} fontSize="text-2xl" />

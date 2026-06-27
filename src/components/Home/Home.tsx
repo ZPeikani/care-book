@@ -8,19 +8,19 @@ import drRamezani from "@/assets/doctors/dr-ramezani.jpg";
 import drTaheri from "@/assets/doctors/dr-taheri.webp";
 import CareBlogs from "./blogs/CareBlogs";
 export const doctors = [
-    {
-      id: 1,
-      name: "دکتر مجید رمضانی",
-      specialty: "متخصص غدد",
-      image: drRamezani,
-    },
-    {
-      id: 2,
-      name: "دکتر حسن طاهری",
-      specialty: "تخصص ارتوپدی",
-      image: drTaheri,
-    },
-  ];
+  {
+    id: 1,
+    name: "دکتر مجید رمضانی",
+    specialty: "متخصص غدد",
+    image: drRamezani,
+  },
+  {
+    id: 2,
+    name: "دکتر حسن طاهری",
+    specialty: "تخصص ارتوپدی",
+    image: drTaheri,
+  },
+];
 export default function Home() {
   return (
     <div className="mb-10 flex flex-col gap-16">
