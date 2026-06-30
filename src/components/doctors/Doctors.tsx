@@ -2,7 +2,7 @@ import { texts } from "@/constants/localization";
 import SearchBar from "@/components/Home/search-bar/SearchBar";
 import BreadCrumbs from "@/components/shared/breadcrumbs/Breadcrumbs";
 import CardDoctor from "@/components/card/card-doctor/CardDoctor";
-import { doctors } from "@/components/Home/Home";
+import { doctors } from "@/data/doctors";
 
 function Doctors() {
   return (
