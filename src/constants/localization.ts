@@ -24,4 +24,5 @@ export const texts = {
   appointments: "نوبت ها",
   patients: "بیماران",
   schedule: "برنامه زمانی",
+  medicalSystemCode: "کد نظام پزشکی",
 };
