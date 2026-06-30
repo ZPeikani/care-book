@@ -1,17 +1,7 @@
 import Link from "next/link";
-import { StaticImageData } from "next/image";
+import { Prop } from "@/hooks/doctors/type";
 
-type Doctor = {
-  id: number;
-  name: string;
-  specialty: string;
-  image: StaticImageData;
-};
-type Props = {
-  doctor: Doctor;
-};
-
-export default function CardSearchbar({ doctor }: Props) {
+export default function CardSearchbar({ doctor }: Prop) {
   return (
     <>
       <Link

@@ -2,16 +2,7 @@ import { texts } from "@/constants/localization";
 import SectionTitle from "../section-title/SectionTitle";
 import Link from "next/link";
 import CardDoctor from "@/components/card/card-doctor/CardDoctor";
-import { StaticImageData } from "next/image";
-
-export type Props = {
-  doctors: {
-    id: number;
-    name: string;
-    specialty: string;
-    image: StaticImageData;
-  }[];
-};
+import { Props } from "@/hooks/doctors/type";
 
 export default function TopDoctors({ doctors }: Props) {
   return (

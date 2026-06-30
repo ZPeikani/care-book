@@ -1,19 +1,10 @@
+import Link from "next/link";
 import Buttons from "@/components/shared/buttons/Buttons";
-import { StaticImageData } from "next/image";
+import { Prop } from "@/hooks/doctors/type";
 
-type Doctor = {
-  id: number;
-  name: string;
-  specialty: string;
-  image: StaticImageData;
-};
-type Props = {
-  doctor: Doctor;
-};
-
-export default function CardDoctor({ doctor }: Props) {
+export default function CardDoctor({ doctor }: Prop) {
   return (
-    <div>
+    <Link href={`/doctors/${doctor.id}`}>
       <div className="relative max-w-3xs w-full py-4 border border-gray-300 rounded-xl shadow-md">
         <div className="flex flex-col items-center">
           <img
@@ -34,6 +25,6 @@ export default function CardDoctor({ doctor }: Props) {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
