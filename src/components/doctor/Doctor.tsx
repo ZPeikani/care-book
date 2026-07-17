@@ -2,6 +2,7 @@ import { texts } from "@/constants/localization";
 import BreadCrumbs from "@/components/shared/breadcrumbs/Breadcrumbs";
 import { Prop } from "@/hooks/doctors/type";
 import DoctorInfo from "./doctor-info/DoctorInfo";
+import Booking from "./booking/Booking";
 
 export default function Doctor({ doctor }: Prop) {
   return (
@@ -9,9 +10,9 @@ export default function Doctor({ doctor }: Prop) {
       <BreadCrumbs
         array={[[texts.home, "/"], [texts.doctors, "/doctors"], [doctor.name]]}
       />
-      <div className="flex w-full">
+      <div className="flex w-full gap-4">
         <DoctorInfo doctor={doctor} />
-        <div></div>
+        <Booking doctor={doctor}/>
       </div>
     </div>
   );
