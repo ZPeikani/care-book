@@ -11,6 +11,7 @@ export type Props = {
       detail: string;
     };
     medicalSystemCode: number;
+    about:string,
   }[];
 };
 
@@ -24,6 +25,7 @@ export type Doctor = {
     detail: string;
   };
   medicalSystemCode: number;
+  about:string,
 };
 
 export type Prop = {
