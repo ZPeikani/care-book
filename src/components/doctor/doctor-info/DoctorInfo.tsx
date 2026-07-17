@@ -5,8 +5,8 @@ import { CiLocationOn } from "react-icons/ci";
 
 export default function DoctorInfo({ doctor }: Prop) {
   return (
-    <div className="flex flex-col gap-6 min-w-2/5">
-      <div className="flex gap-4 bg-[#EBF1FA] py-4 pr-4 rounded-2xl">
+    <div className="flex flex-col gap-6 min-w-3/5">
+      <div className="flex gap-4 bg-fourthly py-4 pr-4 rounded-2xl">
         <div>
           <img
             className="w-24 h-24 mb-6 rounded-full"
@@ -15,9 +15,9 @@ export default function DoctorInfo({ doctor }: Prop) {
           />
         </div>
         <div className="flex flex-col gap-2.5">
-          <h5 className="text-lg font-bold tracking-tight text-heading">
+          <h1 className="text-xl font-bold tracking-tight text-heading">
             {doctor.name}
-          </h5>
+          </h1>
           <span className="text-sm font-bold text-gray-500">
             {doctor.specialty}
           </span>
@@ -35,9 +35,23 @@ export default function DoctorInfo({ doctor }: Prop) {
           </div>
         </div>
       </div>
-      <div className="flex gap-4 bg-[#EBF1FA] py-4 pr-4 rounded-2xl"></div>
-      <div className="flex gap-4 bg-[#EBF1FA] py-4 pr-4 rounded-2xl"></div>
-      <div className="flex gap-4 bg-[#EBF1FA] py-4 pr-4 rounded-2xl"></div>
+      <div className="flex flex-col gap-4 bg-fourthly py-4 px-4 rounded-2xl">
+        <h3 className="text-lg font-bold tracking-tight text-heading">
+        {texts.about} {doctor.name}
+        </h3>
+        <span className="text-md text-gray-500 font-bold">
+          {doctor.about}
+        </span>
+      </div>
+      <div className="flex flex-col gap-4 bg-fourthly py-4 px-4 rounded-2xl">
+        <h3 className="text-lg font-bold tracking-tight text-heading">
+        آدرس مطب {doctor.name}
+        </h3>
+        <span className="text-md text-gray-500 font-bold">
+          {doctor.address.detail}
+        </span>
+      </div>
+      <div className="flex gap-4 bg-fourthly py-4 pr-4 rounded-2xl"></div>
     </div>
   );
 }
