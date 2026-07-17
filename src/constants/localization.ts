@@ -1,6 +1,7 @@
 export const BASE_URL = "http://localhost:3000";
 
 export const texts = {
+  address:"آدرس",
   signUp: "ثبت نام",
   signIn: "ورود",
   userName: "نام کاربری",
@@ -11,6 +12,7 @@ export const texts = {
   doctors: "پزشکان",
   blog: "مجله",
   aboutUs: "درباره ما",
+  about:"درباره",
   contactUs: "ارتباط با ما",
   specialties: "تخصص ها",
   topDoctors: "پزشکان برتر",
